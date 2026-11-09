@@ -2,7 +2,7 @@
 
 **ANSYS Fluent · compressible aerodynamics · RANS turbulence modelling · mesh verification · experimental comparisons**
 
-![Project overview](figures/overview.png)
+![Project overview](overview.png)
 
 A CFD study of transonic flow over the **ONERA M6 swept wing**. We investigated how mesh type, turbulence treatment and viscous versus inviscid modelling influence wing-surface pressure predictions, and compared computed pressure coefficients with **published wind-tunnel experiments**.
 
@@ -35,11 +35,11 @@ A CFD study of transonic flow over the **ONERA M6 swept wing**. We investigated 
 
 | Hybrid mesh | Leading-edge refinement |
 |:---:|:---:|
-| ![Hybrid mesh around wing](figures/mesh_full.png) | ![Leading-edge mesh](figures/mesh_leading_edge.png) |
+| ![Hybrid mesh around wing](mesh_full.png) | ![Leading-edge mesh](mesh_leading_edge.png) |
 
 | Convergence-history plot | Wing pressure contour at M=0.84 |
 |:---:|:---:|
-| ![Residuals](figures/residuals.png) | ![Surface pressure contour](figures/pressure_contour_mach084.png) |
+| ![Residuals](residuals.png) | ![Surface pressure contour](pressure_contour_mach084.png) |
 
 These are the **original output figures**, taken from the original project presentation. They were not regenerated from Fluent case files.
 
@@ -49,15 +49,15 @@ The figures compare **Fluent predictions** from different mesh/turbulence-model 
 
 ### Mach 0.84, α = 3.06°
 
-![Comparison of Cp at Mach 0.84 for span stations 1, 3 and 6](figures/comparison_mach084.png)
+![Comparison of Cp at Mach 0.84 for span stations 1, 3 and 6](comparison_mach084.png)
 
-Individual, full-resolution figures: [station 1](figures/cp_m084_station1.png) · [station 3](figures/cp_m084_station3.png) · [station 6](figures/cp_m084_station6.png).
+Individual, full-resolution figures: [station 1](cp_m084_station1.png) · [station 3](cp_m084_station3.png) · [station 6](cp_m084_station6.png).
 
 ### Mach 0.88, α = 3.06°
 
-![Comparison of Cp at Mach 0.88 for span stations 1, 3 and 6](figures/comparison_mach088.png)
+![Comparison of Cp at Mach 0.88 for span stations 1, 3 and 6](comparison_mach088.png)
 
-Individual, full-resolution figures: [station 1](figures/cp_m088_station1.png) · [station 3](figures/cp_m088_station3.png) · [station 6](figures/cp_m088_station6.png).
+Individual, full-resolution figures: [station 1](cp_m088_station1.png) · [station 3](cp_m088_station3.png) · [station 6](cp_m088_station6.png).
 
 ### Findings and limitations reported in the presentation
 
@@ -74,13 +74,13 @@ Individual, full-resolution figures: [station 1](figures/cp_m088_station1.png) �
 
 | Station 1 | Station 3 | Station 6 |
 |:---:|:---:|:---:|
-| ![](figures/viscous_inviscid_m088_station1.png) | ![](figures/viscous_inviscid_m088_station3.png) | ![](figures/viscous_inviscid_m088_station6.png) |
+| ![](viscous_inviscid_m088_station1.png) | ![](viscous_inviscid_m088_station3.png) | ![](viscous_inviscid_m088_station6.png) |
 
 **Cross-solver contextual check at M=0.84, station 1:**
 
 | SU2 benchmark plot referenced in the slides | Fluent comparison from the project |
 |:---:|:---:|
-| ![](figures/su2_reference_m084_station1.png) | ![](figures/fluent_vs_experiment_m084_station1.png) |
+| ![](su2_reference_m084_station1.png) | ![](fluent_vs_experiment_m084_station1.png) |
 
 The SU2 figure is an external reference plot shown in the original presentation and is **not claimed as a new simulation performed by the authors**. The source presentation states both solvers show a similar deviation near the shock region.
 
@@ -96,21 +96,9 @@ The ONERA M6 wind-tunnel pressure data are associated with **Schmitt and Charpin
 
 ## Files and reproducibility
 
-```text
-.
-├── README.md
-├── figures/
-│   ├── overview.png
-│   ├── comparison_mach084.png
-│   ├── comparison_mach088.png
-│   ├── cp_m084_station{1,3,6}.png
-│   ├── cp_m088_station{1,3,6}.png
-│   ├── ... original mesh, contour and comparison images
-├── data/
-│   └── README.md
-└── scripts/
-    └── plot_cp_comparison.py
-```
+The image files are stored in the **repository root** alongside `README.md`.
+This README links directly to them by filename (for example,
+`comparison_mach084.png` and `mesh_full.png`).
 
 The repository is a **documented CFD portfolio study**, not yet a reproducible solver benchmark: original Fluent `.cas/.dat` files, mesh files, solver settings exports, and machine-readable pointwise CFD data were **not supplied**. The PNGs show the actual historical results from the presentation. A reusable plotting script is included for when raw curves are available; **no curves or numerical measurements have been invented**.
 
